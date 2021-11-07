@@ -1,1 +1,3 @@
 New-AzVM -ResourceGroupName powershellgrp -Name powershellvm -Location NorthEurope -VirtualNetworkName "myNewVNet" -SubetName "default" -SecurityGroupName "myNewNSG" -PublicIpAddressName "mypublicip" -OpenPorts 80,3389
+
+Stop-AzVM -Name powershellvm -ResourceGroupName powershellgrp
