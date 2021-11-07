@@ -1,3 +1,16 @@
+New-AzResourceGroup -Name powershellgrp -Location NorthEurope
+
 New-AzVM -ResourceGroupName powershellgrp -Name powershellvm -Location NorthEurope -VirtualNetworkName "myNewVNet" -SubetName "default" -SecurityGroupName "myNewNSG" -PublicIpAddressName "mypublicip" -OpenPorts 80,3389
 
 Stop-AzVM -Name powershellvm -ResourceGroupName powershellgrp
+
+// Wilcard lookup for all commands
+
+get-command *AzWebApp*
+
+
+// app service then web app
+
+New AzAppservicePlan -ResourceGroupName powershellgrp -Name udemyAppservicePlan -Location NorthEurope -Tired Free
+
+New-AzWebApp - ResourceGroupName powershellgrp -Name "jdf-udemy-app" - Locatoin "NorthEurope" -AppServicePlan "udemyAppservicePlan"
